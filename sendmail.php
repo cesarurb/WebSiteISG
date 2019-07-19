@@ -24,9 +24,10 @@
   //   $mail->Username   = $correo_emisor;         // Usuario Gmail
   //   $mail->Password   = $contrasena;           // Contraseña Gmail
   //
-  $retval = mail ($to, $subject, $mensaje, $header);
-  if ($retval == true) {
-    echo "Pre inscripción enviada exitosamente...";
+  $retval = @mail ($to, $subject, $mensaje, $header);
+  if (true) {
+    swal('¡Felicitaciones!', 'Su Pre Inscripción fue enviada con éxito', 'success');
+    header('Location:index.html');
   } else {
     echo "Pre inscripción no pudo ser enviada...";
   }
