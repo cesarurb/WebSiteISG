@@ -246,7 +246,7 @@
         <br><br><br>
     <div class="container">
 
-        <section class="timeline1 cid-qpgHWclFyn" id="timeline1-2l" data-rv-view="7774">
+        <section class="timeline1 cid-qpgHWclFyn" id="timeline1-2l" data-rv-view="7774" ng-if="ctrl.fechaVenta">
             <div class="container align-center">
                 <h2 class="mbr-section-title pb-3 mbr-fonts-style display-2">
                     Cronograma
@@ -292,34 +292,12 @@
               <div class="container">
                 <div class="media-container-row">
                   <div class="title col-12 align-center">
-                    <h2 class="pb-3 mbr-fonts-style display-2">PRECIOS</h2>
+                    <h2 class="pb-3 mbr-fonts-style display-2">{{ctrl.titulo_precios}}</h2>
                     <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-5">Lista de los precios para asistir al evento</h3>
                   </div>
                 </div>
               </div>
-              <div class="media-container-row m-l-10">
-                <!-- <div class=" col-12 col-lg-4 col-md-6 my-2">
-                  <div class="pricing">
-                    <div class="plan-header">
-                      <div class="plan-price">
-                        <span class="price-value mbr-fonts-style display-5">S/.</span>
-                        <span class="price-figure mbr-fonts-style display-1">50</span>
-                        <h3 class="plan-title mbr-fonts-style display-5">Miembro de Isaca</h3>
-                        <hr>
-                      </div>
-                    </div>
-                    <div class="plan-body">
-                      <p class="mbr-text mbr-fonts-style display-7">
-                        <li>Coffe break</li>
-                        <li>Certifiacion ISACA</li>
-                        <li>Materiales</li>
-                      </p>
-                      <div class="mbr-section-btn pt-4 text-center">
-                        <a href="https://mobirise.com" class="btn btn-primary">Inscribirte</a>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
+              <div class="media-container-row m-l-10" ng-if="!ctrl.fechaVenta">
                 <div class="col-12 col-lg-6 col-md-9 my-3">
                   <div class="pricing">
                     <div class="plan-header" align="center">
@@ -359,7 +337,53 @@
                         <li>Materiales</li>
                       </p>
                       <div class="mbr-section-btn pt-4 text-center">
+                        <a href="" class="btn btn-primary fondo-morado-isaca">Inscribirte</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="media-container-row m-l-10" ng-if="ctrl.fechaVenta">
+                <div class="col-12 col-lg-6 col-md-9 my-3">
+                  <div class="pricing">
+                    <div class="plan-header" align="center">
+                      <div class="plan-price">
+                        <span class="price-value mbr-fonts-style display-5">S/.</span>
+                        <span class="price-figure mbr-fonts-style display-1">65</span>
+                        <h3 class="plan-title mbr-fonts-style display-5">Estudiante</h3>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="plan-body">
+                      <p class="mbr-text mbr-fonts-style display-7">
+                        <li>Coffe break</li>
+                        <li>Certifiacion ISACA</li>
+                        <li>Materiales</li>
+                      </p>
+                      <div class="mbr-section-btn pt-4 text-center">
                         <a href="https://mobirise.com" class="btn btn-primary fondo-morado-isaca">Inscribirte</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-md-9 my-3">
+                  <div class="pricing">
+                    <div class="plan-header" align="center">
+                      <div class="plan-price">
+                        <span class="price-value mbr-fonts-style display-5">S/.</span>
+                        <span class="price-figure mbr-fonts-style display-1">80</span>
+                        <h3 class="plan-title mbr-fonts-style display-5">Profesional</h3>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="plan-body ">
+                      <p class="mbr-text mbr-fonts-style display-7">
+                        <li>Coffe break</li>
+                        <li>Certifiacion ISACA</li>
+                        <li>Materiales</li>
+                      </p>
+                      <div class="mbr-section-btn pt-4 text-center">
+                        <a href="" class="btn btn-primary fondo-morado-isaca">Inscribirte</a>
                       </div>
                     </div>
                   </div>
@@ -374,28 +398,27 @@
       <div class="container">
         <div class="media-container-row">
           <div class="title col-12 align-center">
-            <h2 class="pb-3 mbr-fonts-style display-2">INSCRIPCION</h2>
+            <h2 class="pb-3 mbr-fonts-style display-2">PRE INSCRIPCIÓN</h2>
             <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-5">
-              Puedes registrarte llenando correctamente el siguiente formulario
+              Puedes reservar tu cupo en el V UNT ISACA Full Day llenando correctamente el siguiente formulario
             </h3>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 order-md-12 ">
             <h4 class="mb-3">Datos Personales</h4>
-            <!-- <form id="contact-form" class="needs-validation" novalidate> -->
             <form action="sendmail.php" method="post" class="needs-validation" validate>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">Nombres</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" ng-model="ctrl.formulario.nombres" required>
+                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" required>
                   <div class="invalid-feedback">
                     Es necesario un nombre válido.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="lastName">Apellidos</label>
-                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" ng-model="ctrl.formulario.apellidos" required>
+                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" required>
                   <div class="invalid-feedback">
                     Es necesario un apellido válido.
                   </div>
@@ -404,34 +427,36 @@
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="university">Universidad</label>
-                  <select ng-options="universidad for universidad in ctrl.universidades" class="custom-select d-block w-100 form-control" id="university" name="university" ng-model="universidad_escogida" required ng-changes="ctrl.combobox()">
+                  <select ng-options="universidad for universidad in ctrl.universidades" class="custom-select d-block w-100 form-control" id="university" name="university" ng-model="ctrl.universidad_escogida" required>
                     <option value="" disabled>Seleccione su universidad</option>
                   </select>
                   <div class="invalid-feedback">
-                    Please select a valid university.
+                    Es necesario seleccionar uno.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3" ng-if="ctrl.universidad_escogida == 'Otra'">
                   <label for="otherUniversity">Universidad</label>
-                  <input type="text" class="form-control" id="otherUniversity" name="otherUniversity" ng-model="ctrl.formulario.universidad_ingresada" placeholder="Ingrese el nombre de su universidad" value="" required>
+                  <input type="text" class="form-control" id="otherUniversity" name="otherUniversity" placeholder="Ingrese el nombre de su universidad" required>
                   <div class="invalid-feedback">
-                    Es necesario un apellido válido.
+                    Es necesario el nombre de su universidad.
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="academicLevel">Nivel académico</label>
-                  <input type="text" class="form-control" id="academicLevel" name="academicLevel" placeholder="" ng-model="ctrl.formulario.nivelAcademico" required>
+                  <select ng-options="nivel for nivel in ctrl.niveles" class="custom-select d-block w-100 form-control" id="academicLevel" name="academicLevel" ng-model="ctrl.nivelAcademico" required>
+                    <option value="" disabled>Seleccione</option>
+                  </select>
                   <div class="invalid-feedback">
-                    Es necesario un nombre válido.
+                    Es necesario seleccionar uno.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="telephone">Teléfono</label>
-                  <input type="text" class="form-control" id="telephone" name="telephone" placeholder="" ng-model="ctrl.formulario.telefono" required>
+                  <input type="text" class="form-control" id="telephone" name="telephone" placeholder="" required>
                   <div class="invalid-feedback">
-                    Es necesario un apellido válido.
+                    Es necesario un teléfono válido.
                   </div>
                 </div>
               </div>
@@ -439,9 +464,9 @@
                 <label for="email">Correo Electronico</label>
                 <div class="input-group">
                   <div class="input-group-prepend"></div>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="tu@ejemplo.com" ng-model="ctrl.formulario.email" required>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="tu@ejemplo.com" required>
                   <div class="invalid-feedback" style="width: 100%;">
-                    Es necesario un Correo Electronico valido.
+                    Es necesario un correo eléctronico válido.
                   </div>
                 </div>
               </div>
@@ -452,52 +477,20 @@
               </div>
               <hr class="mb-4">
               <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" value="Send">Registrarse</button>
+              <button class="btn btn-primary btn-lg btn-block fondo-morado-isaca" type="submit" value="Send">Registrarse</button>
             </form>
           </div>
         </div>
       </div>
     </section>
     <section id="Cuenta">
-
-
-
-
-
-<section class="countdown1 cid-qpCJZNWaa1" id="countdown1-4n" data-rv-view="7707">
-
-
-
-<div class="container ">
-    <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
-        Cuenta Regresiva
-    </h2>
-    <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-5">
-        Tiempo que falta para el gran evento ISG UNT FULL DAY, no pierda la oportunidad de inscribirse
-        sin costo alguno
-    </h3>
-
-</div>
-<div class="container countdown-cont align-center">
-    <div class="daysCountdown" title="Dias"></div>
-    <div class="hoursCountdown" title="Horas"></div>
-    <div class="minutesCountdown" title="Minutos"></div>
-    <div class="secondsCountdown" title="Segundos"></div>
-    <div class="countdown pt-5 mt-2" data-due-date="2019/09/05">
-    </div>
-</div>
-</section>
-</section>
-
-    <!-- <section id="Cuenta">
       <section class="countdown1 cid-qpCJZNWaa1" id="countdown1-4n" data-rv-view="7707">
         <div class="container ">
           <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
             Cuenta Regresiva
           </h2>
           <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-5">
-            Tiempo que falta para el gran evento ISG UNT FULL DAY, no pierda la oportunidad de inscribirse
-            sin costo alguno
+            No te pierdas el V UNT ISACA Full Day, queda poco tiempo. Reserva tu cupo sin costo alguno.
           </h3>
         </div>
         <div class="container countdown-cont align-center">
@@ -505,16 +498,16 @@
           <div class="hoursCountdown" title="Horas"></div>
           <div class="minutesCountdown" title="Minutos"></div>
           <div class="secondsCountdown" title="Segundos"></div>
-          <div class="countdown pt-5 mt-2" data-due-date="2019/09/05"> </div>
+          <div class="countdown pt-5 mt-2" data-due-date="2019/09/07 08:30"></div>
         </div>
       </section>
-    </section> -->
+    </section>
     <section class="cid-qpgQbbV8fE" id="footer1-43" data-rv-view="6817">
       <div class="container">
         <div class="media-container-row content text-white">
           <div class="col-12 col-md-3">
             <div class="media-wrap">
-              <a href="https://mobirise.com/">
+              <a href="https://www.facebook.com/ISACAUNT/">
                 <img src="app/img/logo-isg-sm.png" alt="Mobirise" media-simple="true" style="height: 4.5rem;">
               </a>
             </div>

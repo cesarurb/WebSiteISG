@@ -1,6 +1,10 @@
 var app = angular.module("MyApp", []);
 app.controller("myAppController", ['$scope', 'myAppService', function($scope, myAppService){
   var ctrl = this;
+  ctrl.titulo_precios = "PRECIOS DE PRE VENTA";
+  ctrl.fechaInt = 0;
+  ctrl.fechaVenta = false;
+
   ctrl.universidades = [
     "Universidad Nacional de Trujillo",
     "Universidad Privada del Norte",
@@ -8,38 +12,28 @@ app.controller("myAppController", ['$scope', 'myAppService', function($scope, my
     "Universidad César Vallejo",
     "Otra"
   ];
-  // ctrl.universidad_escogida = ctrl.universidades[0];
+
+  ctrl.niveles = [
+    "Estudiante",
+    "Egresado"
+  ];
+
   ctrl.universidad_escogida = null;
-  ctrl.universidad_ingresada = "";
-  ctrl.nombre = "CESAR";
-  ctrl.email = "cesarurbina.narro@gmail.com";
-  ctrl.consulta = "TENGO UNA CONSULTA";
-  ctrl.formulario = {
-    nombres: "",
-    apellidos: "",
-    universidad: "",
-    nivelAcademico: "",
-    telefono: "",
-    email: ""
+  ctrl.nivelAcademico = null;
+
+  ctrl.obtenerFecha = function() {
+    var f = new Date();
+    ctrl.fechaInt = f * 1;
+    var inicioVenta = new Date("2019-09-02");
+    ctrl.fechaVenta = (ctrl.fechaInt >= (inicioVenta*1));
+    if (ctrl.fechaVenta) ctrl.titulo_precios = "PRECIOS DE VENTA";
   }
 
-  // ctrl.enviarRegistro = function() {
-  //   myAppService.enviarRegistro().then(function() {
-  //     swal("¡Bien hecho!", "Pre inscripción enviada", "success");
-  //   })
-  // }
-  ctrl.enviarRegistro = function() {
-    var name = ctrl.formulario.nombres + " " + ctrl.formulario.apellidos;
-    var email = ctrl.formulario.email;
-    var message = "QUIERO ENVIAR UN MENSAJE";
-    if (!name.length || !email.length || !message.length) {
-      swal("ERROR", "Datos inválidos", "error");
-    } else {
-      data = String("Name: " + name + "\nEmail:" + email + "\nMessage: " + message);
-      console.log(data);
-      myAppService.sendemail(angular.toJson(data)).then(function() {
-        swal("¡Bien hecho!", "Pre inscripción enviada", "success");
-      })
-    }
+  ctrl.init = function () {
+    ctrl.obtenerFecha();
+
   }
+
+  ctrl.init();
+
 }]);

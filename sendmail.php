@@ -17,7 +17,7 @@
   $header.= "X-Mailer: PHP/". phpversion();
   $retval = @mail ($to, $subject, $mensaje, $header);
   if ($retval == true) {
-    echo "<script>alert('Tu pre inscripción ha sido enviada exitosamente, en breve nos pondremos en contacto contigo.');
+    echo "<script>alert('Has reservado un cupo en el evento, en breve estaremos en contacto contigo. No olvides compartir con tus amistades.');
 window.location.assign('index.html');</script>";
   } else {
     echo "<script>alert('No se pudo registrar tu pre inscripción, inténtalo nuevamente y verifica la información.');
