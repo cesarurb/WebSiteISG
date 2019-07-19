@@ -1,5 +1,7 @@
 <?php
-  $name = $_POST["firstName"] . $_POST["lastName"];
+  $firstName = $_POST["firstName"];
+  $lastName = $_POST["lastName"];
+  $name = "$firstName $lastName";
   $university = $_POST["university"];
   $otherUniversity = $_POST["otherUniversity"];
   $academicLevel = $_POST["academicLevel"];
@@ -9,9 +11,9 @@
   // $mensaje = htmlspecialchars($mensaje);
   // $mensaje = stripslaches($mensaje);
 
-  $to = "untstudentgroup.isaca@gmail.com";
+  $to = "untstudentgroup.isaca@preinscripcion.com";
   $subject = "PRE INSCRIPCIÓN DE $name";
-  $header = "From: untstudentgroup.isaca@gmail.com \r\n";
+  $header = "From: preinscripcion@correo.com \r\n";
   $header.= "X-Mailer: PHP/". phpversion();
   $retval = @mail ($to, $subject, $mensaje, $header);
   if ($retval == true) {
