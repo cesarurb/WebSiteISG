@@ -384,8 +384,7 @@
           <div class="col-md-12 order-md-12 ">
             <h4 class="mb-3">Datos Personales</h4>
             <!-- <form id="contact-form" class="needs-validation" novalidate> -->
-            <form action="sendmail.php" method="post" class="needs-validation"validate>
-            <!-- <form id="contact-form" action="https://formspree.io/untstudentgroup.isaca@gmail.com" method="POST" class="needs-validation" novalidate> -->
+            <form action="sendmail.php" method="post" class="needs-validation" validate>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">Nombres</label>
@@ -407,11 +406,6 @@
                   <label for="university">Universidad</label>
                   <select ng-options="universidad for universidad in ctrl.universidades" class="custom-select d-block w-100 form-control" id="university" name="university" ng-model="universidad_escogida" required ng-changes="ctrl.combobox()">
                     <option value="" disabled>Seleccione su universidad</option>
-                    <!-- <option value="2">Universidad Nacional de Trujillo</option>
-                    <option value="3">Universidad Privada del Norte</option>
-                    <option value="4">Universidad Privada Antenor Orrego</option>
-                    <option value="5">Universidad César Vallejo</option>
-                    <option value="0">Otro</option> -->
                   </select>
                   <div class="invalid-feedback">
                     Please select a valid university.

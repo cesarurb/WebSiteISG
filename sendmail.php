@@ -10,25 +10,12 @@
   $subject = "PRE INSCRIPCIÓN REALIZADA DE $name";
   $header = "From: untstudentgroup.isaca@gmail.com \r\n";
   $header.= "X-Mailer: PHP/". phpversion();
-
-  // ini_set("SMTP","smtp.gmail.com");
-  // ini_set("smtp_port","25");
-  // ini_set("sendmail_from","untstudentgroup.isaca@gmail.com");
-  // $mail->SMTPDebug  = 2;                     // Habilita información SMTP (opcional para pruebas)
-  //                                              // 1 = errores y mensajes
-  //                                              // 2 = solo mensajes
-  //   $mail->SMTPAuth   = true;                  // Habilita la autenticación SMTP
-  //   $mail->SMTPSecure = "ssl";                 // Establece el tipo de seguridad SMTP
-  //   $mail->Host       = "smtp.gmail.com";      // Establece Gmail como el servidor SMTP
-  //   $mail->Port       = 465;                   // Establece el puerto del servidor SMTP de Gmail
-  //   $mail->Username   = $correo_emisor;         // Usuario Gmail
-  //   $mail->Password   = $contrasena;           // Contraseña Gmail
-  //
   $retval = @mail ($to, $subject, $mensaje, $header);
-  if (true) {
-    swal('¡Felicitaciones!', 'Su Pre Inscripción fue enviada con éxito', 'success');
-    header('Location:index.html');
+  if ($retval == true) {
+    echo "<script>alert('Tu pre inscripción ha sido enviada exitosamente, en breve nos pondremos en contacto contigo.');
+window.location.assign('index.html');</script>";
   } else {
-    echo "Pre inscripción no pudo ser enviada...";
+    echo echo "<script>alert('No se pudo registrar tu pre inscripción, inténtalo nuevamente y verifica la información.');
+window.location.assign('index.html');</script>";
   }
 ?>
