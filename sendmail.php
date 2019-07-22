@@ -3,7 +3,11 @@
   $lastName = $_POST["lastName"];
   $name = "$firstName $lastName";
   $university = $_POST["university"];
-  $otherUniversity = $_POST["otherUniversity"];
+  try {
+    $otherUniversity = $_POST["otherUniversity"];
+  } catch (\Exception $e) {
+    $otherUniversity = " - ";
+  }
   $academicLevel = $_POST["academicLevel"];
   $telephone = $_POST["telephone"];
   $email = $_POST["email"];
