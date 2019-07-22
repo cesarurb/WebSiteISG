@@ -15,7 +15,7 @@
   // $mensaje = htmlspecialchars($mensaje);
   // $mensaje = stripslaches($mensaje);
 
-  $to = "untstudentgroup.isaca@preinscripcion.com";
+  $to = "untstudentgroup.isaca@gmail.com";
   $subject = "PRE INSCRIPCIÓN DE $name";
   $header = "From: preinscripcion@correo.com \r\n";
   $header.= "X-Mailer: PHP/". phpversion();
