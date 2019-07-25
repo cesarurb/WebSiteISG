@@ -1,6 +1,7 @@
 var app = angular.module("MyApp", []);
 app.controller("myAppController", ['$scope', 'myAppService', function($scope, myAppService){
   var ctrl = this;
+  ctrl.tcache = 0;
   ctrl.titulo_precios = "PRECIOS DE PRE VENTA";
   ctrl.fechaInt = 0;
   ctrl.fechaVenta = false;
@@ -29,8 +30,14 @@ app.controller("myAppController", ['$scope', 'myAppService', function($scope, my
     if (ctrl.fechaVenta) ctrl.titulo_precios = "PRECIOS DE VENTA";
   }
 
+  function getRandom() {
+    return Math.random();
+  }
+
   ctrl.init = function () {
     ctrl.obtenerFecha();
+    ctrl.tcache = parseInt(getRandom()*10000000000,10);
+    console.log(ctrl.tcache);
 
   }
 
