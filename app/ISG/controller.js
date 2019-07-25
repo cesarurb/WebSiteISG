@@ -26,7 +26,7 @@ app.controller("myAppController", ['$scope', 'myAppService', function($scope, my
     var f = new Date();
     ctrl.fechaInt = f * 1;
     var inicioVenta = new Date("2019-09-02");
-    ctrl.fechaVenta = (ctrl.fechaInt >= (inicioVenta*1));
+    ctrl.fechaVenta = (ctrl.fechaInt <= (inicioVenta*1));
     if (ctrl.fechaVenta) ctrl.titulo_precios = "PRECIOS DE VENTA";
   }
 
@@ -37,8 +37,6 @@ app.controller("myAppController", ['$scope', 'myAppService', function($scope, my
   ctrl.init = function () {
     ctrl.obtenerFecha();
     ctrl.tcache = parseInt(getRandom()*10000000000,10);
-    console.log(ctrl.tcache);
-
   }
 
   ctrl.init();
