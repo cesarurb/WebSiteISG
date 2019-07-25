@@ -26,7 +26,7 @@ app.controller("myAppController", ['$scope', 'myAppService', function($scope, my
     var f = new Date();
     ctrl.fechaInt = f * 1;
     var inicioVenta = new Date("2019-09-02");
-    ctrl.fechaVenta = (ctrl.fechaInt <= (inicioVenta*1));
+    ctrl.fechaVenta = (ctrl.fechaInt >= (inicioVenta*1));
     if (ctrl.fechaVenta) ctrl.titulo_precios = "PRECIOS DE VENTA";
   }
 
