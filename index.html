@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="app/assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="app/assets/estilos.css" type="text/css">
     <script src="app\lib\angular.min.js"></script>
-    <script src="controller.js"></script>
-    <script src="service.js"></script>
+    <script src="app\controller.js"></script>
+    <script src="app\service.js"></script>
   </head>
   <body ng-controller="myAppController as ctrl">
     <nav class="navbar navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm px-md-4 mb-3 bg-white">
@@ -158,7 +158,7 @@
               <div class="container">
                 <div class="media-container-row">
                   <div class="title col-12 align-center">
-                    <h2 class="pb-3 mbr-fonts-style display-2 titulo">
+                    <h2 class="pb-3 mbr-fonts-style display-2 titulo-h2">
                       PONENTES
                     </h2>
                     <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-5">
@@ -263,7 +263,7 @@
         <div class="container">
           <section class="timeline1 cid-qpgHWclFyn" id="timeline1-2l" data-rv-view="7774" ng-if="ctrl.fechaVenta">
             <div class="container align-center">
-              <h2 class="mbr-section-title pb-3 mbr-fonts-style display-2 titulo">
+              <h2 class="mbr-section-title pb-3 mbr-fonts-style display-2 titulo-h2">
                 Cronograma
               </h2>
               <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style display-5">
@@ -305,7 +305,7 @@
                 <div class="container">
                   <div class="media-container-row">
                     <div class="title col-12 align-center">
-                      <h2 class="pb-3 mbr-fonts-style display-2 titulo">{{ctrl.titulo_precios}}</h2>
+                      <h2 class="pb-3 mbr-fonts-style display-2 titulo-h2">{{ctrl.titulo_precios}}</h2>
                       <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-5">Lista de los precios para asistir al evento</h3>
                     </div>
                   </div>
@@ -455,7 +455,7 @@
         <div class="container">
           <div class="media-container-row">
             <div class="title col-12 align-center">
-              <h2 class="pb-3 mbr-fonts-style display-2 titulo">PRE INSCRIPCIÓN</h2>
+              <h2 class="pb-3 mbr-fonts-style display-2 titulo-h2">PRE INSCRIPCIÓN</h2>
               <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-5">
                 Puedes reservar tu cupo en el V UNT ISACA Full Day llenando correctamente el siguiente formulario
               </h3>
@@ -464,7 +464,7 @@
           <div class="row">
             <div class="col-md-12 order-md-12 ">
               <h4 class="mb-3">Datos Personales</h4>
-              <form action="sendmail.php" method="post" class="needs-validation" validate>
+              <form action="app\sendmail.php" method="post" class="needs-validation" validate>
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="firstName">Nombres</label>
@@ -543,7 +543,7 @@
       <section id="Cuenta">
         <section class="countdown1 cid-qpCJZNWaa1" id="countdown1-4n" data-rv-view="7707">
           <div class="container ">
-            <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2 titulo">
+            <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2 titulo-h2">
               Cuenta Regresiva
             </h2>
             <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-5">
