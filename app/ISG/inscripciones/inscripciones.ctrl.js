@@ -1,7 +1,6 @@
-angular.module('myISGApp').controller("myAppController", ['$scope', function($scope){
+angular.module('myISGApp').controller("InscripcionesCtrl", ['$scope', function($scope){
   var ctrl = this;
-  ctrl.tcache = 0;
-  ctrl.titulo_precios = "PRECIOS DE PRE VENTA";
+  ctrl.tipoVenta = "PRE VENTA";
   ctrl.fechaInt = 0;
   ctrl.fechaVenta = false;
 
@@ -13,20 +12,14 @@ angular.module('myISGApp').controller("myAppController", ['$scope', function($sc
     "Otra"
   ];
 
-  ctrl.niveles = [
-    "Estudiante",
-    "Egresado"
-  ];
-
   ctrl.universidad_escogida = null;
-  ctrl.nivelAcademico = null;
 
   ctrl.obtenerFecha = function() {
     var f = new Date();
     ctrl.fechaInt = f * 1;
     var inicioVenta = new Date("2019-09-02");
     ctrl.fechaVenta = (ctrl.fechaInt >= (inicioVenta*1));
-    if (ctrl.fechaVenta) ctrl.titulo_precios = "PRECIOS DE VENTA";
+    if (ctrl.fechaVenta) ctrl.tipoVenta = "VENTA";
   }
 
   ctrl.init = function () {
