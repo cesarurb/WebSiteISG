@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-md-6 mb-3" ng-if="ctrl.universidad_escogida == 'Otra'">
                   <label for="otherUniversity">Universidad</label>
-                  <input type="text" class="form-control" id="otherUniversity" name="otherUniversity" placeholder="Ingrese el nombre de su universidad" required>
+                  <input type="text" class="form-control" id="otherUniversity" name="otherUniversity" placeholder="Ingrese el nombre de su universidad">
                   <div class="invalid-feedback">
                     Es necesario el nombre de su universidad.
                   </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="academicLevel">Nivel académico</label>
-                  <input type="text" class="form-control" id="academicLevel" name="academicLevel" placeholder="" value="Estudiante" disabled>
+                  <input type="text" class="form-control" id="academicLevel" name="academicLevel" placeholder="" value="Estudiante" readonly>
                   <div class="invalid-feedback">
                     Es necesario seleccionar uno.
                   </div>
@@ -67,7 +67,7 @@
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="typeSale">Etapa</label>
-                  <input type="text" class="form-control" id="typeSale" name="typeSale" placeholder="" ng-model="ctrl.tipoVenta" disabled>
+                  <input type="text" class="form-control" id="typeSale" name="typeSale" placeholder="" ng-model="ctrl.tipoVenta" readonly>
                   <div class="invalid-feedback">
                     Es necesario seleccionar uno.
                   </div>

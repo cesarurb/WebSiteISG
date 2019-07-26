@@ -29,13 +29,13 @@
     $retval = @mail ($to, $subject, $mensaje, $header);
     if ($retval == true) {
       echo "<script>alert('Felicitaciones, has reservado un cupo en el V UNT ISACA Full Day, recibirás un correo de confirmación y en breve estaremos en contacto contigo. No olvides compartir con tus amistades.');
-  window.location.assign('#!/home');</script>";
+  window.location.assign('http://isacaunt.000webhostapp.com');</script>";
     } else {
       echo "<script>alert('No se pudo registrar tu pre inscripción, inténtalo nuevamente y verifica la información.');
-  window.location.assign('#!/home');</script>";
+  window.location.assign('http://isacaunt.000webhostapp.com');</script>";
     }
   } else {
     echo "<script>alert('No se pudo registrar tu pre inscripción, inténtalo nuevamente y verifica la información.');
-window.location.assign('#!/home');</script>";
+window.location.assign('http://isacaunt.000webhostapp.com');</script>";
   }
 ?>
